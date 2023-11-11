@@ -1,0 +1,35 @@
+1. The total number of months included in the dataset.
+
+2. The net total amount of Profit/Losses over the entire period.
+
+3. The average of the changes in Profit/Losses over the entire period.
+
+    a. You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+    b. (Total/(Number of months - 1))
+
+4. The greatest increase in Profit/Losses (date and amount) over the entire period.
+
+5. The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+
+PSEUDOCODE 
+
+1. Use .length function to count the number of months in the "finances" array and log to the console
+
+2. Create a variable for the netTotal
+
+3. Create a for loop running the length of the "finances" array to add all financial data within the netTotal var and log to the console
+
+4. Create a var for totalChange 
+
+5. Create a for loop that surrounds an algorithm that subtracts the monthly profit/loss of the following (+1) month from each item within the array except the final item (finances.length -1). 
+
+6. Within the for loop, create a new array (var monthlyChanges) that uses a concatenation of each month that is being compared (month 0 and month +1 e.g. "Jan-2010-Feb-2010") to create the first [0] string in the new array, the second [1] figure will be the difference calculated between those two months.
+
+Create a push statement that will store each difference as calculated in [2] of each array within the finances array. 
+
+6. Add each figure from this comparison within the var totalChange 
+
+7. Calculate totalChange over finances.length -1 to find the average change between profits/losses made over the period and log to the console
+
+8. Use the sort. function to sort the [2] item of each array within the finances array to identify the lowest and highest differences and log to the console

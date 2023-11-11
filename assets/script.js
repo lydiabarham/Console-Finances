@@ -99,3 +99,33 @@ var finances = [
     var netTotal = (finances[i][1]= finances[i][1] + finances[i-1][1]);
   }
   console.log("Total: $" + netTotal);
+
+  //The average of the changes in Profit/Losses over the entire period
+
+  //var monthlyChange = finances[0][1] - finances[1][1];
+  
+
+  //var monthlyChange = 
+  //for (var i=0; i < finances.length; i++){
+    //for (var j=1; j < 2; j++ ){
+      //var monthlyDifference = finances[i][1] - finances[i+1][1];
+      //finances.push[2](monthlyDifference);
+      //console.log(finances);
+    //}
+  //}
+
+
+  var monthlyChangeArray = [];
+  var rows = finances.length-1;
+  var columns = 2;
+
+// Create a new array for monthly differences
+for (var i = 0; i < rows; i++) {
+    monthlyChangeArray[i] = [finances[i][0] + " to " + finances[i+1][0]];
+    monthlyChangeArray[i][1] = [finances[i][1] - finances[i+1][1]];
+  }
+
+
+console.log(monthlyChangeArray);
+
+//for (var j = 0; j < columns; j++) {

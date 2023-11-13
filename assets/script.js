@@ -87,9 +87,6 @@ var finances = [
     ['Feb-2017', 671099],
   ];
 
-  //var monthlyDifference = finances[0][1] - finances[0++][1];
-  //console.log(monthlyDifference);
-
   console.log("Financial Analysis");
 
   console.log("------------------")
@@ -209,8 +206,6 @@ for (var i = 1; i < rows; i++) {
     monthlyChangeArray[i][1] = parseInt(difference);
 }
 
-console.log(monthlyChangeArray);
-
 // Track the total change in profit/losses
 var changesTotal = 0;
 for (var i = 1; i < monthlyChangeArray.length; i++) {
@@ -222,3 +217,27 @@ var averageChange = changesTotal / (monthlyChangeArray.length - 1);
 averageChange = parseFloat(averageChange.toFixed(2));
 
 console.log("Average change: " + averageChange);
+
+
+// Sort the monthly changes array into numerical order 
+
+monthlyChangeArray.sort(sortFunction);
+
+function sortFunction(a, b) {
+    if (a[1] === b[1]) {
+        return 0;
+    }
+    else {
+        return (a[1] < b[1]) ? -1 : 1;
+    }
+}
+
+// The greatest increase in Profit/Losses (date and amount) over the entire period
+
+var greatestIncrease = monthlyChangeArray[monthlyChangeArray.length-2];
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease[0] + " ($" + greatestIncrease[1] + ")")
+
+// The greatest decrease in Profit/Losses (date and amount) over the entire period
+
+var greatestDecrease = monthlyChangeArray[0]; 
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")")
